@@ -31,7 +31,7 @@ const ProblemDescriptionComponent: React.FC<ProblemDescriptionComponentProps> = 
 		<div>
 			<div className='description-header'>
 				<h1>{id+'.  '}{problem.title}</h1>
-				<span>{problem.difficulty}</span>
+				<span className={`difficulty-tag-${problem.difficulty.toLowerCase()}`}>{problem.difficulty}</span>
 			</div>
 		  <p>{problem.description}</p> 
 		  {problem.example ? (
