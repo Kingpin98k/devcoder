@@ -1,10 +1,7 @@
-import React from "react";
 import "./style.css";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet} from "react-router-dom";
 
 const ProblemComponent = () => {
-	const id = useParams();
-	console.log(id);
 	// const id:string = "1";
 
 	return (

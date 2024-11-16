@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { GlobalChat, ProblemPageComponent, UserDashBoard } from "./components";
 import SelectRolePage from "./components/SelectRolePage";
 import SignUpForm from "./components/SignUpForm";
 import useAuthGuard from "./hooks/useAuthGuard";
 import { Notes } from "./components/ui";
+import ProblemDescriptionComponent from "./components/ProblemDescriptionComponent";
 
 const App: React.FC = () => {
 	const { ProtectRoute } = useAuthGuard();
@@ -17,7 +18,7 @@ const App: React.FC = () => {
 				element={<ProblemPageComponent />}
 			>
 				<Route index element={<Navigate to="description" />} />
-				<Route path="description" element={<div>Hello</div>} />
+				<Route path="description" element={<ProblemDescriptionComponent />} />
 				<Route path="notes" element={<Notes />} />
 				<Route
 					path="chat"

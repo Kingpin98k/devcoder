@@ -2,29 +2,30 @@ import React, { useEffect } from "react";
 import { db } from "../../utils/firebase";
 import { getDocs, query, where, collection } from "firebase/firestore";
 import "./style.css";
+import { useLocation, useParams } from "react-router-dom";
 
-interface ProblemDescriptionComponentProps {
-	id: string;
-}
-
-const ProblemDescriptionComponent: React.FC<
-	ProblemDescriptionComponentProps
-> = ({ id }) => {
+const ProblemDescriptionComponent= () => {
 	const [problem, setProblem] = React.useState<Problem | null>(null);
+	const { problem_id } = useParams<{ problem_id: string }>();
+	const id = parseInt(problem_id || "0");
 
 	const fetchProblem = async (id: number) => {
-		const q = query(collection(db, "problems"), where("id", "==", id));
-		const querySnapshot = await getDocs(q);
+		if(id > 0) {
+			const q = query(collection(db, "problems"), where("id", "==", id));
+			const querySnapshot = await getDocs(q);
 
-		console.log(querySnapshot.docs.map((doc) => doc.data()));
-		if (querySnapshot.docs.length === 1) {
-			setProblem(querySnapshot.docs[0].data() as Problem);
+			console.log(querySnapshot.docs.map((doc) => doc.data()));
+			if (querySnapshot.docs.length === 1) {
+				setProblem(querySnapshot.docs[0].data() as Problem);
+			}
+		}
+		else{
+			setProblem(null);
 		}
 	};
 
 	useEffect(() => {
-		console.log(id);
-		fetchProblem(parseInt(id));
+		fetchProblem(id);
 	}, []);
 
   return (
