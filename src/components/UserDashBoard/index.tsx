@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Notes, ProblemCircle, ProfileCard, StatsCard } from "../ui";
+import { ProblemCircle, ProfileCard, StatsCard } from "../ui";
 import { mockProblemStats } from "../../data";
 import ActivityCalendar from "../ui/ActivityCalendarComponent";
 

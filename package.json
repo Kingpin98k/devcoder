@@ -1,5 +1,5 @@
 {
-  "name": "devcoder",
+  "name": "devcode-devcoder",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,13 +11,18 @@
   },
   "dependencies": {
     "@codeium/react-code-editor": "^1.0.12",
+    "@codingsnack/leetcode-api": "^0.0.5",
+    "@mdxeditor/editor": "^3.19.0",
     "@tinymce/tinymce-react": "^5.1.1",
     "axios": "^1.7.7",
     "cookies-js": "^1.2.3",
     "firebase": "^11.0.2",
     "framer-motion": "^11.11.16",
+    "graphql-request": "^7.1.2",
     "html-react-parser": "^5.1.18",
+    "install": "^0.13.0",
     "lucide-react": "^0.456.0",
+    "npm": "^10.9.0",
     "react": "^18.3.1",
     "react-activity-calendar": "^2.7.1",
     "react-dom": "^18.3.1",
@@ -25,13 +30,16 @@
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.53.2",
     "react-icons": "^5.3.0",
+    "react-loading-skeleton": "^3.5.0",
     "react-markdown": "^9.0.1",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.28.0",
     "react-split": "^2.0.14",
     "react-spring": "^9.7.4",
     "react-tooltip": "^5.28.0",
-    "recharts": "^2.13.3"
+    "recharts": "^2.13.3",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
