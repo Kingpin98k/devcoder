@@ -91,7 +91,8 @@ const LearningTopicCard : FC<learningTopicCardProps>= ({topic}) => {
             <div key={problem.id} className="problem-item" onClick={()=>navigate(`/problem/${problem.id}`)}>
             <div className='question-card-header'>
             <h3>{problem.id}: {problem.title}</h3>
-            <img className='question-status' src={getProblemStatus(problem.id,currUser)==='completed' ? 'https://wallpapers.com/images/hd/green-check-mark-black-background-h4sar2aihe79iwgr-2.jpg' : getProblemStatus(problem.id,currUser) ==='attempted' ? 'https://thumbs.dreamstime.com/b/red-black-grunge-brush-stroke-cross-no-decline-aggressive-vector-vintage-sign-curved-isolated-check-mark-object-dark-background-95414900.jpg' : 'https://image.freepik.com/free-icon/minus-sign-in-a-square_318-53201.jpg' }></img>
+            {currUser!== '' && <img className='question-status' src={getProblemStatus(problem.id,currUser)==='completed' ? 'https://wallpapers.com/images/hd/green-check-mark-black-background-h4sar2aihe79iwgr-2.jpg' : getProblemStatus(problem.id,currUser) ==='attempted' ? 'https://thumbs.dreamstime.com/b/red-black-grunge-brush-stroke-cross-no-decline-aggressive-vector-vintage-sign-curved-isolated-check-mark-object-dark-background-95414900.jpg' : 'https://image.freepik.com/free-icon/minus-sign-in-a-square_318-53201.jpg' }></img>
+            }
           </div>
             <p>{problem.description}</p>
             <p>

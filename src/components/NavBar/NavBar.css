@@ -185,3 +185,12 @@ button.dev-navbar-item {
   color: var(--color-brand-orange);
   background-color: var(--color-dark-fill-2);
 }
+
+.dev-navbar-item-button{
+  margin-left : 2em;
+}
+
+.login-register-buttons{
+  margin-left: 10em;
+}
+

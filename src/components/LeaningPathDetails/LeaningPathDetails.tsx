@@ -17,6 +17,7 @@ const LeaningPathDetails = () => {
   const {user} = useAuth();
   const currUser = user?.uid;
 
+  if (currUser === undefined || currUser === '') {document.getElementById('sidebar')?.classList.add('blur-overlay');}
   const { problems, submissions, loading, learningPaths } = useContext(DataContext)!;
   if (loading) return (
     <div id="loading-for-data-page">
@@ -113,7 +114,7 @@ const LeaningPathDetails = () => {
         return <LearningTopicCard topic={topic} key={index} />
       })}
 
-      <div id="sidebar">
+      { (currUser !== '' && currUser!== undefined) ? <div id="sidebar">
         <h2>Progress Overview</h2>
         <div className="sidebar-boxes" onMouseEnter={() => setHoveredCategory('all')} onMouseLeave={() => setHoveredCategory('all')}>
           <p>Total</p> <p>{solvedEasy + solvedMedium + solvedHard}/{totalProblems}</p>
@@ -165,7 +166,12 @@ const LeaningPathDetails = () => {
             </>
           )}
         </div>
-      </div>
+      </div> : (
+    <div className="blur-overlay">
+      <h2>Progress Overview</h2>
+      <p>Login to view progress</p>
+    </div>
+  )}
     </div>
   )
 }

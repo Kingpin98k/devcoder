@@ -182,7 +182,7 @@ const ProblemList: React.FC = () => {
 							<h3>
 								{problem.id}: {problem.title}
 							</h3>
-							<img
+							{currUser !== '' && <img
 								className="question-status"
 								src={
 									getProblemStatus(problem.id, currUser) ===
@@ -195,7 +195,7 @@ const ProblemList: React.FC = () => {
 										? "https://thumbs.dreamstime.com/b/red-black-grunge-brush-stroke-cross-no-decline-aggressive-vector-vintage-sign-curved-isolated-check-mark-object-dark-background-95414900.jpg"
 										: "https://image.freepik.com/free-icon/minus-sign-in-a-square_318-53201.jpg"
 								}
-							></img>
+							></img>}
 						</div>
 						<p>{problem.description}</p>
 						<p>

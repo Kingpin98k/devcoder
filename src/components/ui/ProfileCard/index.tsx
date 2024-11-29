@@ -19,7 +19,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
 			<button className="edit-profile-btn">Edit Profile</button>
 			<div className="github-info">
 				<span className="github-icon">●</span>
-				<span>Kingpin98k</span>
+				<span>Demo-Profile</span>
 			</div>
 		</div>
 	);

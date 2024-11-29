@@ -49,12 +49,6 @@ const SignUpForm: React.FC = () => {
 
 	return (
 		<div className="signup-page">
-			<header className="signup-header">
-				<div className="header-content">
-					<Code className="header-icon" />
-					<h1>Code Editor</h1>
-				</div>
-			</header>
 			<div className="signup-container">
 				<div className="signup-form-container">
 					<form className="signup-form" onSubmit={handleSubmit}>
@@ -106,7 +100,12 @@ const SignUpForm: React.FC = () => {
 							/>
 						</label>
 						<button type="submit">Register</button>
-						<p>
+						<p
+							style={{ cursor: "pointer" }}
+							onClick={() => {
+								navigate("/login");
+							}}
+						>
 							Already Registered? <Link to="/login">Login</Link>
 						</p>
 

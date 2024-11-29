@@ -6,13 +6,13 @@ import ActivityCalendar from "../ui/ActivityCalendarComponent";
 
 const UserDashBoard: React.FC = () => {
 	const userProfile = {
-		name: "Aditya",
-		username: "AllStar98k",
-		rank: 655582,
-		contestRating: 1598,
-		globalRanking: 140644,
-		attended: 4,
-		topPercentage: 23.05,
+		name: "Dhruv",
+		username: "coderack",
+		rank: 2800,
+		contestRating: 1972,
+		globalRanking: 3654,
+		attended: 52,
+		topPercentage: 3.05,
 	};
 
 	return (

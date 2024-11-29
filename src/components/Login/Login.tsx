@@ -4,6 +4,7 @@ import { auth } from "../../utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { Code, LogOut, Pointer, User } from "lucide-react";
 const Login: React.FC = () => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState<string>("");
@@ -36,8 +37,27 @@ const Login: React.FC = () => {
 
 	return (
 		<div className="login-page">
+			<div className="credentialsContainer">
+				<div className="credentialCard">
+					<User className="icon" />
+					<div>
+						<p className="credentialLabel">Username:</p>
+						<p className="credentialValue">test@test.com</p>
+					</div>
+				</div>
+				<div className="credentialCard">
+					<LogOut className="icon" />
+					<div>
+						<p className="credentialLabel">Password:</p>
+						<p className="credentialValue">testtest</p>
+					</div>
+				</div>
+			</div>
 			<header className="login-header">
-				<h1>Welcome To Code Editor</h1>
+				<div className="header-content">
+					<Code className="header-icon" />
+					<h1> Welcome to DevCoder</h1>
+				</div>
 			</header>
 			<div className="login-container">
 				<div className="login-form-container">
@@ -62,7 +82,12 @@ const Login: React.FC = () => {
 							/>
 						</label>
 						<button type="submit">Login</button>
-						<p>
+						<p
+							onClick={() => {
+								navigate("/signup");
+							}}
+							style={{ cursor: "pointer" }}
+						>
 							Don't Have Account?{" "}
 							<Link to="/signup">Register</Link>
 						</p>
@@ -83,7 +108,7 @@ const Login: React.FC = () => {
 				</div>
 			)}
 			<footer className="login-footer">
-				<p>&copy; 2023 Code Editor. All rights reserved.</p>
+				<p>&copy; 2024 DevCoder. All rights reserved.</p>
 			</footer>
 		</div>
 	);
